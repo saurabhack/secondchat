@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Contacts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Navigation bar styles */
+        nav {
+            background-color: #333;
+            color: #fff;
+        }
+
+        .navbar {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .navbar li {
+            margin: 10px;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+
+        /* Container styles (your existing styles) */
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            padding: 20px;
+        }
+
+        .contact-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .contact-list li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #ccc;
+            cursor: pointer;
+        }
+
+        .contact-list li:hover {
+            background-color: #f2f2f2;
+        }
+
+        .contact-name {
+            font-weight: bold;
+        }
+
+        .chat-button {
+            background-color: #25d366;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul class="navbar">
+            <li><a href="add">add </a></li>
+            <li><a href="signup">sign up</a></li>
+            <li><a href="login">Login</a></li>
+            <li><a href="logout">Logout</a></li>
+            <!-- Add more navigation links as needed -->
+        </ul>
+    </nav>
+    
+    <br>
+    <br>
+    <br>
+    <br>
+    <center>
+    <h1>{{user.username}}</h1>
+</center>
+    
+    <div class="container" id="contacts">
+        <h1>Contact List</h1>
+        <ul class="contact-list">
+            {%for i in obj%}
+            <li>
+                <span class="contact-name">{{i.name}}</span>
+                <button style="text-decoration: none;" class="chat-button"><a href="chatbot">Chat</a></button>
+            </li>
+            {%endfor%}
+<!--             <li>
+                <span class="contact-name">Jane Smith</span>
+                <button class="chat-button">Chat</button>
+            </li>
+            <li>
+                <span class="contact-name">Alice Johnson</span>
+                <button class="chat-button">Chat</button>
+            </li> -->
+            <!-- Add more contacts here -->
+        </ul>
+    </div>
+</body>
+</html>
